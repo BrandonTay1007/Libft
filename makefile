@@ -7,3 +7,4 @@ RM = rm -rf
 all: $(NAME)
 
 NAME: 
+	cc $(CFLAGS) $(SRC)

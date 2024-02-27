@@ -6,19 +6,16 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:54:11 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/02/27 14:54:12 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:51:51 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if ((c >= 'A' && c <= 'Z') 
+		|| (c >= 'a' && c <= 'z'))
 	{
-		return (1);
-	}
-	else if (c >= 'a' && c <= 'z')
-	{
-		return (2);
+		return (c);
 	}
 	return (0);
 }
