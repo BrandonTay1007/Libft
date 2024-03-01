@@ -6,9 +6,11 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:58:20 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/02/27 15:59:58 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:39:40 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int ft_strlen(const char *s)
 {

@@ -1,6 +1,5 @@
 #include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
+
 
 int main(int argc, char const *argv[])
 {
@@ -13,6 +12,5 @@ int main(int argc, char const *argv[])
     printf("%i ", isdigit('\''));
     printf("%i ", ft_isdigit(' '));
     printf("%i ", isdigit(' '));
-    printf("%i ", ft_isdigit('12'));
-    printf("%i ", isdigit('12'));
+    ft_memset("ASDSD",'a',1);
 }
