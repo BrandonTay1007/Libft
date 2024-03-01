@@ -1,12 +1,20 @@
-SRC = $(wildcard *.c)
-HEADERS = $(wildcard *.h)
-OBJS = $(wildcard *.o)
-CURDIR = $(shell pwd)
-CC = gcc
-COBJ = -g -c
-CFLAGS = -Wall -Wextra -Werror
-RM = rm -rf
-all: $(NAME)
+NAME=libft.a
 
-NAME: 
-	echo file $(CURDIR)
+SRCS= $(wildcard *.c)
+
+OBJECTS= $(SRCS:.c=.o)
+
+INCLUDES=./
+
+all:$(NAME)
+
+$(NAME): gcc $(SRCS) -o $(SRCS:.c=.o)
+	ar rcs $(NAME) $(OFILES) 
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
