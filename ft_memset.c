@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:00:18 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/01 16:58:28 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/02 21:25:40 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char*	ptr;
+	char	*ptr;
 
 	ptr = b;
 	while (len-- > 0)

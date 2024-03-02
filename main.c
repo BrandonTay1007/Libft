@@ -1,16 +1,14 @@
 #include "libft.h"
 
-
 int main(int argc, char const *argv[])
 {
-    char a = 'a';
-    printf("%i ", ft_isdigit(a));
-    printf("%i ", isdigit(a));
-    printf("%i ", ft_isdigit('0'));
-    printf("%i ", isdigit('0'));
-    printf("%i ", ft_isdigit('\''));
-    printf("%i ", isdigit('\''));
-    printf("%i ", ft_isdigit(' '));
-    printf("%i ", isdigit(' '));
-    ft_memset("ASDSD",'a',1);
+	char src[50] = "Hello testing 123.. ";
+	char dest[50];
+	memmove(src+2, src+5, 30);
+	printf("Original function: %s\n", src);
+	char src2[50] = "Hello testing 123.. ";
+	ft_memcpy(src+2,src2+5, 30);
+	printf("My function: %s\n",src);
 }
+
+

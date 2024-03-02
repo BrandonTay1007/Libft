@@ -3,13 +3,17 @@ NAME=libft.a
 SRCS= $(wildcard *.c)
 
 OBJECTS= $(SRCS:.c=.o)
+OBJ_DIR= objs
 
 INCLUDES=./
 
 all:$(NAME)
 
-$(NAME): gcc $(SRCS) -o $(SRCS:.c=.o)
-	ar rcs $(NAME) $(OFILES) 
+$(NAME): 
+	clang -c $(SRCS)
+
+obj:
+	mkdir $(OBJ_DIR)
 
 clean:
 	rm -f $(OBJECTS)

@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 16:59:33 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/01 17:07:29 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/02 21:23:22 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char*	ptr;
+	char	*ptr;
 
 	ptr = s;
 	while (n-- > 0)
