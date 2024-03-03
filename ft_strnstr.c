@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 15:21:30 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/03 16:51:53 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/03/03 18:59:45 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/03/03 19:15:21 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	check_needle(const char *hay, const char* needle)
 {
-	if (c >= '0' && c <= '9')
+	while(*needle)
 	{
-		return (c);
+		if (*hay != *needle)
+			return (0);
+		hay++;
+		needle++;
 	}
-	return (0);
+	return (1);
+}
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack && len-- > 0)
+	{
+		if (*haystack == *needle)
+			if (check_needle(haystack, needle))
+				return ((char *)haystack);
+		haystack++;
+	}
+	return (NULL);
 }
