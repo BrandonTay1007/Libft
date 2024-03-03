@@ -5,14 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 21:51:23 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/02 21:52:26 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/03/03 12:55:28 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/03/03 15:52:36 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *str1, const void *str2, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-    
+	char *d;
+	char *s;
+
+	d = (char *)dest;
+	s = (char *)src;
+
+	if (dest == src)
+		return (dest);
+	if (s < d)
+	{
+		while (len--)
+			d[len] = s[len];
+	}
+	else
+	{
+		while (len--)
+			*d++ = *s++;
+	}
+	return (dest);
 }

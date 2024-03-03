@@ -1,24 +1,22 @@
-NAME=libft.a
+NAME= libft.a
 
-SRCS= $(wildcard *.c)
+SRC= $(wildcard *.c)
+OBJ= $(wildcard *.o)
+OBJDIR= objs/
 
-OBJECTS= $(SRCS:.c=.o)
-OBJ_DIR= objs
 
-INCLUDES=./
-
-all:$(NAME)
-
-$(NAME): 
-	clang -c $(SRCS)
-
-obj:
-	mkdir $(OBJ_DIR)
+all: $(NAME)
+	
+$(NAME):
+	cc -c -Wall -Werror -Wextra $(SRC)
+	ar rcs $(NAME) $(SRC:.c=.o)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
+
+.PHONY:  all clean fclean re

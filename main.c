@@ -1,15 +1,16 @@
 #include "libft.h"
 
-int main(int argc, char const *argv[])
+int main()
 {
-	char str[] = "foo-bar";
-	char dest[5];
-	puts(str);
-	memcpy(dest, &str[3], 6);
-	puts(str);
-	char str2[] = "foo-bar";
-	memmove(&str2[3], &str2[3], 4);
-	puts(str2);
+	int src[] = {0,2,3,4,5};
+	int dest[5];
+	ft_memcpy(dest, src, 5 * sizeof(int));
+
+	
+	int	i = 0;
+	while (i < 6)
+	{
+		printf("%i", dest[i]);
+		i++;
+	}
 }
-
-
