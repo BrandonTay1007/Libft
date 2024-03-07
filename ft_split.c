@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:06:33 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 18:29:28 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/07 18:33:14 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ char	**ft_split(char const *s, char c)
 	arr = malloc(countword(s, c) + 1);
 		
 		
-		
+	return (0);
 }
-
+/* 
 int main(int argc, char const *argv[])
 {
 	char *str = "  Hello World Hello   ";
 	printf("%i", countword(str, ' '));
-}
+} */
