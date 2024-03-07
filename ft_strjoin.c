@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 12:13:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 17:34:04 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/03/07 17:34:19 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/03/07 17:39:04 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*substr;
-	size_t	i;
+	char	*s;
+	int	i;
+	int	j;
 
 	i = 0;
-	substr = malloc(len + 1);
-	if (!substr)
+	j = 0;
+	s = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s)
 		return (NULL);
-	while (i < len && str[start])
+	while (s1[j])
 	{
-		substr[i] = str[start];
+		s[i] = s1[j];
 		i++;
-		start++;
+		j++;
 	}
-	if (substr)
-		substr[i] = '\0';
-	return (substr);
+	j = 0;
+	while (s2[j])
+	{
+		s[i] = s2[j];
+		i++;
+		j++;
+	}
+	if (s)
+		s[i] = '\0';
+	return (s);
 }
-
-/* int main(int argc, char const *argv[])
-{	
-	char *str = "1";
-	unsigned int start = 10;
-	size_t len = 1;
-	
-	char *a = ft_substr("tripouille", 100, 1);
-	printf("%s",a);
-	printf("%i",strcmp(a,""));
-	free(a);
-} */

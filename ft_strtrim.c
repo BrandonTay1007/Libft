@@ -1,45 +1,64 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 12:13:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 17:34:04 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/03/07 17:39:32 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/03/07 18:02:26 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+void check_leaks();
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+int		check(char c, char const *set)
 {
-	char	*substr;
-	size_t	i;
+	int	i;
 
 	i = 0;
-	substr = malloc(len + 1);
-	if (!substr)
-		return (NULL);
-	while (i < len && str[start])
+	while (set[i])
 	{
-		substr[i] = str[start];
+		if (c == set[i])
+			return (0);
 		i++;
-		start++;
 	}
-	if (substr)
-		substr[i] = '\0';
-	return (substr);
+	return (1);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*s;
+	size_t	i;
+	size_t	a;
+
+	i = 0;
+	a = 0;
+	s = malloc(ft_strlen(s1 + 1));
+	if (!s)
+		return (NULL);
+	while (s1[i])
+	{
+		if (check(s1[i], set))
+		{
+			s[a] = s1[i];
+			a++;
+		}
+		i++;
+	}
+
+	if (s)
+		s[a] = '\0';
+	return (s);
 }
 
 /* int main(int argc, char const *argv[])
-{	
-	char *str = "1";
-	unsigned int start = 10;
-	size_t len = 1;
-	
-	char *a = ft_substr("tripouille", 100, 1);
-	printf("%s",a);
-	printf("%i",strcmp(a,""));
-	free(a);
+{
+	char *str = "Hello world";
+	char *set = "le";
+	char *a = ft_strtrim("   xxxtripouille", " x");
+	puts(a);
+	check_leaks();
+	return 0;
 } */
