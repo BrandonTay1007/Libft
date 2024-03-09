@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:45:56 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 12:06:24 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/08 19:29:03 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,13 @@ void	*ft_calloc(size_t count, size_t size)
 		ft_bzero(p, b);
 	return (p);
 }
+
+/* #include <stdint.h>
+int main(int argc, char const *argv[])
+{
+	char *p = ft_calloc(SIZE_MAX, SIZE_MAX);
+	if (!p)
+		printf("NULL");
+	puts(p);
+	return 0;
+} */
