@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:56:41 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/08 19:23:07 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/09 12:35:21 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <ctype.h>
 # include <stdlib.h>
+# include <limits.h>
 
 
 int		ft_isalpha(int c);

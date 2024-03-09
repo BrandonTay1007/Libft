@@ -1,42 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 11:45:56 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/08 19:29:03 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/03/09 12:54:13 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/03/09 13:12:40 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	recur(int n)
 {
-	size_t	b;
-	void	*p;
-
-	if (count == 0 || size == 0)
-	{
-		count = 1;
-		size = 1;
-	}
-	b = count * size;
-	p = malloc(b);
-	if (p == NULL)
-		return (NULL);
+	char	c;
+	if (n < 10)
+		c = n + '0';
 	else
-		ft_bzero(p, b);
-	return (p);
+	{
+		recur(n / 10);
+		recur(n % 10);
+	}
+	return (c);
 }
 
-/* #include <stdint.h>
+char	*ft_itoa(int n)
+{
+	size_t	size;
+	char 	*str;
+
+	size = 0;
+	if (n < 0)
+		n = (unsigned int)(n * -1);
+	while (n / 10 != 0)
+	{
+		size++;
+		n = n / 10;
+	}
+	printf("%i", size);
+	str = malloc (size + 1)
+	return (NULL);
+}
+
 int main(int argc, char const *argv[])
 {
-	char *p = ft_calloc(SIZE_MAX, SIZE_MAX);
-	if (!p)
-		printf("NULL");
-	puts(p);
+	ft_itoa(1233);
 	return 0;
-} */
+}
