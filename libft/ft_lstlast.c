@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 17:04:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/09 19:23:38 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/03/10 14:33:58 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/03/10 14:45:59 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    helper(unsigned int n, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (n < 10)
-	{
-		ft_putchar_fd(n + '0', fd);
-	}
-	else
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);	
-	}
-}
+	t_list *last_n;
 
-void    ft_putnbr_fd(int n, int fd)
-{
-	unsigned int	nb;
-	if (n < 0)
-	{
-		nb = n * -1;
-		ft_putchar_fd('-', fd);
-	}
-	else
-		nb = n;
-	helper(nb, fd);
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	last_n = lst;
+	return (last_n);
 }
 
 /* int main(int argc, char const *argv[])
 {
-	ft_putnbr_fd(INT_MAX,1);
+	t_list n1;
+	t_list n2;
+	t_list n3;
+	t_list n4;
+	t_list *lastn;
+
+	n1.content = " ";
+	n1.next = &n2;
+	n2.content = " ";
+	n2.next = &n3;
+	n3.content = " ";
+	n3.next = &n4;
+	n4.content = "I'm last";
+	n4.next = NULL;
+	lastn = ft_lstlast(NULL);
+	puts(lastn->content);
 } */

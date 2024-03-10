@@ -19,4 +19,7 @@ fclean: clean
 
 re: fclean $(NAME)
 
+bonus:
+	cc -c -Wall -Werror -Wextra $(SRC)
+	ar rcs $(NAME) $(SRC:.c=.o)
 .PHONY:  all clean fclean re

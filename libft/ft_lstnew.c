@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 16:57:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/09 21:36:50 by twei-yo-         ###   ########.fr       */
+/*   Created: 2024/03/09 21:31:35 by twei-yo-          #+#    #+#             */
+/*   Updated: 2024/03/09 21:41:12 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+t_list *ft_lstnew(void *content)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	t_list *new_node;
+	new_node = malloc(sizeof (t_list));
+	new_node->content = malloc(sizeof(content));
+	new_node->next = malloc(sizeof(new_node));
+	(*new_node).content = content;
+	(*new_node).next = NULL;
+	return (new_node);
 }
+
+/* int main(int argc, char const *argv[])
+{
+	t_list *a = ft_lstnew("ADs");
+	printf("%s", (a->content));
+	return 0;
+} */
