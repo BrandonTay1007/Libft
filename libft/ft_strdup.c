@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:08:42 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 12:11:35 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:46:23 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(char *src)
 
 	i = 0;
 	a = malloc((sizeof(char) * ft_strlen(src)) + 1);
+	if (!a)
+		return (NULL);
 	while (src[i])
 	{
 		a[i] = src[i];

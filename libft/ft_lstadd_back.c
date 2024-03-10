@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:40:04 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/10 14:54:11 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/10 15:04:35 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		*lst = new;			
 }
-int main(int argc, char const *argv[])
+/* int main(int argc, char const *argv[])
 {
 	t_list **n;
 	t_list n1;
@@ -44,5 +44,5 @@ int main(int argc, char const *argv[])
 	n4.next = NULL;
 	ft_lstadd_back(n, &n4);
 	puts(n[3]->content);
-}
+} */
 

@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:13:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 17:34:04 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/10 17:06:26 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
+	if (!str || ft_strlen(str) <= start)
+		return (substr);
 	while (i < len && str[start])
 	{
 		substr[i] = str[start];
 		i++;
 		start++;
 	}
-	if (substr)
+	if (substr && str)
 		substr[i] = '\0';
 	return (substr);
 }

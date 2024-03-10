@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 18:59:45 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 11:08:01 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:46:02 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	if (!*needle)
 		return ((char *)haystack);
+	if (len <= 0)
+		return (0);
 	while (haystack[i] && i < len)
 	{
 		j = 0;
@@ -41,9 +43,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char *hay = "helloworld";
 	char *need = "wo";
-	size_t size = 6;
-	char *a = ft_strnstr(hay, need, size);
-	char *b = strnstr(hay, need, size);
-	puts(a);
+	size_t size = 0;
+	 char *a = ft_strnstr(NULL, need, size); 
+	char *b = strnstr(NULL, need, size);
+	 puts(a); 
 	puts(b);
-} */
+}*/
