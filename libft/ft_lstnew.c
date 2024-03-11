@@ -6,16 +6,16 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 21:31:35 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/10 15:06:10 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:10:13 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *new_node;
-	
+	t_list	*new_node;
+
 	new_node = malloc(sizeof (t_list));
 	if (!new_node)
 		return (NULL);

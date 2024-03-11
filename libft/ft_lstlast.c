@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:33:58 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/10 14:45:59 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 15:59:36 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *last_n;
+	t_list	*last_n;
 
 	if (lst == NULL)
 		return (NULL);

@@ -6,14 +6,14 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 16:52:52 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/03 18:14:03 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:03:26 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strchr(const char *src, int c)
-{	
+{
 	while (*src)
 	{
 		if ((unsigned char)*src == (unsigned char)c)

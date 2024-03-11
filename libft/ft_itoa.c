@@ -6,14 +6,14 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:54:13 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/09 16:37:40 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 15:58:46 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*recur(unsigned int nb, char *str, int is_neg)
-{	
+static char	*recur(unsigned int nb, char *str, int is_neg)
+{
 	if (nb < 10)
 	{
 		if (is_neg)
@@ -32,11 +32,13 @@ char	*recur(unsigned int nb, char *str, int is_neg)
 	return (str);
 }
 
-int	get_size(unsigned int n)
+static unsigned int	get_size(unsigned int n)
 {
-	int	size;
+	unsigned int	size;
 
 	size = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		size++;
@@ -44,23 +46,25 @@ int	get_size(unsigned int n)
 	}
 	return (size);
 }
+
 char	*ft_itoa(int n)
 {
 	size_t			size;
-	char 			*str;
-	int	is_neg;
+	char			*str;
+	int				is_neg;
 	unsigned int	nb;
 
+	size = 0;
 	is_neg = 0;
-	size = get_size(n);
 	if (n < 0)
 	{
 		size++;
-		nb = (unsigned int) (n * -1);
+		nb = (unsigned int)(n * -1);
 		is_neg = 1;
 	}
 	else
 		nb = n;
+	size += get_size(nb);
 	str = malloc((size + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
@@ -71,6 +75,8 @@ char	*ft_itoa(int n)
 
 /* int main(int argc, char const *argv[])
 {
-	char *a = ft_itoa(-1);
-	printf("%s",a);
+	char *a = ft_itoa(-1234);
+	printf("%c",a[5]);
+	if (!a[5])
+		printf("hh");
 } */

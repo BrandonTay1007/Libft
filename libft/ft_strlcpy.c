@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 15:55:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/08 18:47:22 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:05:22 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 
 	i = 0;
 	if (size)
-	{	
-		while (i+1 < size && src[i])
+	{
+		while (i + 1 < size && src[i])
 		{
 			dest[i] = src[i];
 			i++;

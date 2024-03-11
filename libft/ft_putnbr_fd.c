@@ -6,13 +6,13 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 17:04:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/09 19:23:38 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:02:40 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    helper(unsigned int n, int fd)
+static void	helper(unsigned int n, int fd)
 {
 	if (n < 10)
 	{
@@ -21,13 +21,14 @@ void    helper(unsigned int n, int fd)
 	else
 	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);	
+		ft_putnbr_fd(n % 10, fd);
 	}
 }
 
-void    ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
+
 	if (n < 0)
 	{
 		nb = n * -1;

@@ -6,16 +6,16 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 11:09:39 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/07 11:45:36 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:10:39 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' 
-	|| c == '\f' || c == '\r' || c == ' ')
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
 		return (1);
 	return (0);
 }
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
 	int	nb;
 	int	i;
 	int	is_neg;
-	
+
 	nb = 0;
 	i = 0;
 	is_neg = 1;
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if(str[i] == '-')
+		if (str[i] == '-')
 			is_neg = -1;
 		i++;
 	}

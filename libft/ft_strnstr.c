@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 18:59:45 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/10 16:46:02 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:06:19 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			while (haystack[i + j] == needle[j] && (i + j) < len)
 			{
-				if(!needle[j + 1])
+				if (!needle[j + 1])
 					return ((char *)haystack + i);
 				j++;
 			}

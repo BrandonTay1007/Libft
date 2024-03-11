@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 18:16:33 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/03 18:25:50 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:10:04 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *src, int c, size_t len)
 {
-	char *ptr;
-	
+	char	*ptr;
+
 	ptr = (char *)src;
 	while (len-- > 0)
 	{

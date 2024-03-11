@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:40:04 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/10 15:04:35 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:10:55 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *t;
+	t_list	*t;
 
 	if (*lst)
 	{
@@ -22,7 +22,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		t->next = new;
 	}
 	else
-		*lst = new;			
+		*lst = new;
 }
 /* int main(int argc, char const *argv[])
 {
@@ -45,4 +45,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	ft_lstadd_back(n, &n4);
 	puts(n[3]->content);
 } */
-

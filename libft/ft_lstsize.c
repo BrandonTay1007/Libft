@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:19:10 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/10 14:33:27 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:00:23 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int size;
+	int	size;
 
 	size = 1;
-
 	if (lst == NULL)
 		return (0);
 	while ((lst->next) != NULL)
 	{
 		size++;
-		lst = lst->next;   
+		lst = lst->next;
 	}
 	return (size);
 }

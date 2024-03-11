@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 15:48:06 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/10 16:29:44 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:10:19 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_l;
 	t_list	*new_n;
-	
+
 	if (!lst || !f || !del)
 		return (NULL);
 	new_l = NULL;
