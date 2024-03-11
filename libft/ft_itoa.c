@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:54:13 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/11 15:58:46 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:13:38 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ char	*ft_itoa(int n)
 {
 	char *a = ft_itoa(-1234);
 	printf("%c",a[5]);
-	if (!a[5])
-		printf("hh");
+	if (strcmp(a, "-1234"))
+		printf("fail");
+	else
+		printf("Pass");
 } */
