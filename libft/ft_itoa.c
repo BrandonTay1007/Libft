@@ -6,37 +6,25 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:54:13 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/12 10:07:33 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:13:14 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*recur(unsigned int nb, char *str, int is_neg)
-{
-	if (nb < 10)
-	{
-		if (is_neg)
-		{
-			*str = '-';
-			str++;
-		}
-		*str = nb + '0';
-		str++;
-	}
-	else
-	{
-		str = recur(nb / 10, str, is_neg);
-		str = recur(nb % 10, str, 0);
-	}
-	return (str);
-}
-
-static unsigned int	get_size(unsigned int n)
+static unsigned int	get_size(int n)
 {
 	unsigned int	size;
+	unsigned int	nb;
 
 	size = 0;
+	if (n < 0)
+	{
+		size++;
+		nb = n * -1;
+	}
+	else
+		nb = n;
 	if (n == 0)
 		return (1);
 	while (n != 0)
@@ -49,36 +37,39 @@ static unsigned int	get_size(unsigned int n)
 
 char	*ft_itoa(int n)
 {
-	size_t			size;
-	char			*str;
-	int				is_neg;
+	char			*s;
+	unsigned int	size;
 	unsigned int	nb;
 
-	size = 0;
-	is_neg = 0;
+	if (n == 0)
+		return (ft_strdup("0"));
+	size = get_size(n);
+	s = malloc(size + 1);
+	if (!s)
+		return (NULL);
+	s[size] = '\0';
 	if (n < 0)
 	{
-		size++;
-		nb = (unsigned int)(n * -1);
-		is_neg = 1;
+		s[0] = '-';
+		nb = n * -1;
 	}
 	else
 		nb = n;
-	size += get_size(nb);
-	str = malloc((size + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	recur(nb, str, is_neg);
-	(str[size + 1]) = '\0';
-	return (str);
+	while (nb != 0)
+	{
+		size--;
+		s[size] = (nb % 10) + '0';
+		nb = nb / 10;
+	}
+	return (s);
 }
 
 /* int main(int argc, char const *argv[])
 {
-	char *a = ft_itoa(0);
-	printf("%s",a);
-	if (strcmp(a, "0\0"))
-		printf("fail");
-	else
-		printf("Pass");
-} */
+	puts(ft_itoa(2931221));
+	puts(ft_itoa(INT_MAX));
+	puts(ft_itoa(INT_MIN));
+	puts(ft_itoa(0));
+	puts(ft_itoa(-2190320));
+	puts(ft_itoa(1));
+}  */

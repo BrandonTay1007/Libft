@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:06:33 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/12 09:56:31 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:42:35 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,27 @@ static int	countword(char const *src, char c)
 char	**ft_split(char const *src, char c)
 {
 	char	**arr;
-	size_t	i;
 	size_t	c_c;
 	size_t	arr_i;
 
-	i = 0;
-	arr_i = -1;
+	arr_i = 0;
 	arr = malloc((countword(src, c) + 1) * sizeof (char **));
-	if (!arr)
+	if (!arr || !src)
 		return (NULL);
-	while (src[i])
+	while (*src)
 	{
-		if (src[i] != c)
+		if (*src != c)
 		{
 			c_c = 0;
-			while (src [i + c_c] != c && src[i + c_c])
+			while (*(src + c_c) != c && *(src + c_c))
 				c_c++;
-			arr[arr_i++] = malloc(c_c + 1);
-			ft_strlcpy(arr[arr_i], (char *)(src + i), c_c + 1);
-			i += c_c;
+			arr[arr_i] = malloc(c_c + 1);
+			ft_strlcpy(arr[arr_i], (char *)(src), c_c + 1);
+			src += c_c;
+			arr_i++;
 		}
 		else
-			i++;
+			src++;
 	}
 	arr[arr_i] = NULL;
 	return (arr);

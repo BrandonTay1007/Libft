@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:13:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/12 09:46:54 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:37:25 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	substr = malloc(len + 1);
+	if (!str || ft_strlen(str) <= start)
+		return (ft_strdup(""));
+	if (ft_strlen(str) >= len)
+		substr = malloc (len + 1);
+	else
+		substr = malloc (ft_strlen(str));
 	if (!substr)
 		return (NULL);
-	if (!str || ft_strlen(str) <= start)
-		return (substr);
 	while (i < len && str[start])
 	{
 		substr[i] = str[start];
@@ -33,8 +36,8 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 		substr[i] = '\0';
 	return (substr);
 }
-
-/* int main(int argc, char const *argv[])
+/* 
+int main(int argc, char const *argv[])
 {	
 	char *str = "1";
 	unsigned int start = 10;
@@ -42,6 +45,6 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	
 	char *a = ft_substr("tripouille", 100, 1);
 	printf("%s",a);
-	printf("%i",strcmp(a,""));
+	printf("%i", strcmp(a,""));
 	free(a);
 } */
