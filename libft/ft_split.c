@@ -6,13 +6,13 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:06:33 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/11 16:09:48 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/12 09:56:31 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countword(char const *src, char c)
+static int	countword(char const *src, char c)
 {
 	int	i;
 	int	ans;
@@ -41,8 +41,10 @@ char	**ft_split(char const *src, char c)
 	size_t	arr_i;
 
 	i = 0;
-	arr_i = 0;
+	arr_i = -1;
 	arr = malloc((countword(src, c) + 1) * sizeof (char **));
+	if (!arr)
+		return (NULL);
 	while (src[i])
 	{
 		if (src[i] != c)
@@ -50,9 +52,8 @@ char	**ft_split(char const *src, char c)
 			c_c = 0;
 			while (src [i + c_c] != c && src[i + c_c])
 				c_c++;
-			arr[arr_i] = malloc(c_c + 1);
+			arr[arr_i++] = malloc(c_c + 1);
 			ft_strlcpy(arr[arr_i], (char *)(src + i), c_c + 1);
-			arr_i++;
 			i += c_c;
 		}
 		else
