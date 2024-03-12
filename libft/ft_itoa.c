@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:54:13 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/12 10:02:35 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/12 10:07:33 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ char	*ft_itoa(int n)
 
 /* int main(int argc, char const *argv[])
 {
-	char *a = ft_itoa(-9048134);
+	char *a = ft_itoa(0);
 	printf("%s",a);
-	if (strcmp(a, "-9048134\0"))
+	if (strcmp(a, "0\0"))
 		printf("fail");
 	else
 		printf("Pass");
