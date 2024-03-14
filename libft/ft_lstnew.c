@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 21:31:35 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/12 16:30:04 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:13:51 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ t_list	*ft_lstnew(void *content)
 	new_node = malloc(sizeof (t_list));
 	if (!new_node)
 		return (NULL);
-	new_node->content = malloc(sizeof(content));
-	new_node->next = malloc(sizeof(new_node));
 	(*new_node).content = content;
 	(*new_node).next = NULL;
 	return (new_node);

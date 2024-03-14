@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:06:33 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/12 16:42:35 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/03/13 19:55:25 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,33 @@ static int	countword(char const *src, char c)
 	return (ans);
 }
 
+int	count_c(char *src, char c)
+{
+	unsigned int	c_c;
+
+	c_c = 0;
+	while (*(src + c_c) != c && *(src + c_c))
+		c_c++;
+	return (c_c);
+}
+
 char	**ft_split(char const *src, char c)
 {
-	char	**arr;
-	size_t	c_c;
-	size_t	arr_i;
+	char			**arr;
+	unsigned int	c_c;
+	unsigned int	arr_i;
 
+	if (!src)
+		return (NULL);
 	arr_i = 0;
 	arr = malloc((countword(src, c) + 1) * sizeof (char **));
-	if (!arr || !src)
+	if (!arr)
 		return (NULL);
 	while (*src)
 	{
 		if (*src != c)
 		{
-			c_c = 0;
-			while (*(src + c_c) != c && *(src + c_c))
-				c_c++;
+			c_c = count_c((char *)src, c);
 			arr[arr_i] = malloc(c_c + 1);
 			ft_strlcpy(arr[arr_i], (char *)(src), c_c + 1);
 			src += c_c;
