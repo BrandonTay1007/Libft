@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:56:41 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/13 17:37:21 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:25:16 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,19 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
-# include "get_next_line.h"
+# include <errno.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
 
 int		ft_isalpha(int c);
 void	ft_bzero(void *s, size_t n);
@@ -70,6 +76,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+char	*get_next_line(int fd);
 
 
 #endif

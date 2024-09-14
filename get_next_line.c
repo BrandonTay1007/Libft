@@ -10,7 +10,7 @@
 /*                                                  	                      */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*set_buffer(int fd, char *left_s)
 {
@@ -99,17 +99,17 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/* int main()
-{
-	int fd = open("text.txt", O_RDONLY);
-	char	*a;
-	int	i = 0;
-	while (i < 5)
-	{
-		a = get_next_line(fd);
-		printf("[%i]%s\n", i, a);
-		free(a);
-		i++;
-	}
-	return 0;
-} */
+// int main()
+// {
+// 	int fd = open("text.txt", O_RDONLY);
+// 	char	*a;
+// 	int	i = 0;
+// 	while (i < 5)
+// 	{
+// 		a = get_next_line(fd);
+// 		printf("[%i]%s\n", i, a);
+// 		free(a);
+// 		i++;
+// 	}
+// 	return 0;
+// }
