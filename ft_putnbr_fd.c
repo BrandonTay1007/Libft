@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 17:04:46 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/11 16:02:40 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/06/26 11:15:54 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	helper(unsigned int n, int fd)
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
-
+	
 	if (n < 0)
 	{
 		nb = n * -1;

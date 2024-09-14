@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:54:13 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/03/12 17:13:14 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/05/29 21:54:17 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,10 @@
 static unsigned int	get_size(int n)
 {
 	unsigned int	size;
-	unsigned int	nb;
 
 	size = 0;
 	if (n < 0)
-	{
 		size++;
-		nb = n * -1;
-	}
-	else
-		nb = n;
 	if (n == 0)
 		return (1);
 	while (n != 0)
