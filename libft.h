@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:56:41 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/14 12:25:16 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:08:33 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # include <unistd.h>
 # include <errno.h>
 # include <fcntl.h>
+# include <stdarg.h>
+# include <stdint.h>
+# include <stdlib.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
@@ -67,16 +70,26 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
-
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_putnbr_helper(long nb, int *count);
+int		ft_put_uint(unsigned int nb);
+int		ft_put_ptr(void *ptr);
+void	ft_put_hexa(unsigned long nb, char format, int *count);
+int		ft_hexa_uint(unsigned int nb, char format);
+int		ft_hexa_ulong(unsigned long nb, char format);
+int		ft_putint(int nb);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_printf(const char *str, ...);
+int	    speci_parser(char d_type, va_list args);
 
 #endif

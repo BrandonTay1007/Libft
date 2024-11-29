@@ -6,11 +6,11 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:57:03 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/09/13 21:58:26 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:07:36 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_put_hexa(unsigned long nb, char format, int *count)
 {
