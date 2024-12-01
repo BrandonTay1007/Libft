@@ -6,7 +6,7 @@
 /*   By: twei-yo- <twei-yo-@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:56:41 by twei-yo-          #+#    #+#             */
-/*   Updated: 2024/11/29 17:08:33 by twei-yo-         ###   ########.fr       */
+/*   Updated: 2024/12/01 15:17:21 by twei-yo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_printf(const char *str, ...);
 int	    speci_parser(char d_type, va_list args);
+void	ft_free_arr(void **arr);
 
 #endif
